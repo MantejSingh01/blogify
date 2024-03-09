@@ -1,11 +1,14 @@
 import "./App.css";
 import "../src/assets/wave.png";
 import { Outlet, createBrowserRouter } from "react-router-dom";
-import CreatePost from "./components/Container";
+import CreatePost from "./components/feature-components/CreatePost";
 import Login from "./components/Login";
 import Navbar from "./components/feature-components/NavBar";
 import SignUp from "./components/SignUp";
 import Verification from "./components/feature-components/Verification";
+import Container from "./components/Container";
+import ResetPassword from "./components/feature-components/ResetPassword";
+import MyPosts from "./components/feature-components/MyPosts";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -13,7 +16,7 @@ export const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <CreatePost />,
+        element: <Container />,
       },
       {
         path: "/login",
@@ -21,12 +24,17 @@ export const router = createBrowserRouter([
       },
       {
         path: "/signup",
-        element: <SignUp/>,
+        element: <SignUp />,
       },
       {
-        path:'/verification',
-        element:<Verification/>
-      }
+        path: "/verification",
+        element: <Verification />,
+      },
+      {
+        path: "/reset-password",
+        element: <ResetPassword />,
+      },
+      { path: "/myblogs", element: <MyPosts /> },
     ],
   },
 ]);
@@ -34,6 +42,8 @@ function App() {
   return (
     <div className="App z-10">
       <Navbar />
+
+      <CreatePost />
       <Outlet />
     </div>
   );

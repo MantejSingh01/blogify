@@ -1,0 +1,35 @@
+{
+  "name": "pfc_project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "dev": "export NODE_ENV=dev && pm2 start server.js --name pfc_backend_local",
+    "live": "export NODE_ENV=live && pm2 start server.js --name pfc_backend_dev"
+  },
+  "author": "Syed Asad",
+  "license": "ISC",
+  "dependencies": {
+    "agenda": "^3.1.0",
+    "bluebird": "^3.7.2",
+    "config": "^3.3.3",
+    "cors": "^2.8.5",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "flat": "^5.0.2",
+    "flatten": "^1.0.3",
+    "handlebars": "^4.7.6",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.20",
+    "md5": "^2.3.0",
+    "moment": "^2.29.1",
+    "mongoose": "^5.10.6",
+    "nodemailer": "^6.9.11",
+    "request": "^2.88.2",
+    "winston": "^3.3.3",
+    "winston-daily-rotate-file": "^4.5.0"
+  }
+}
