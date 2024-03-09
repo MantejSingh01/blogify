@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 // const autoIncrement = require('mongoose-auto-increment');
 var connect = function() {
     return new Promise((resolve, reject) => {
-        mongoose.connect('mongodb://localhost:23000/pfc_local', {useUnifiedTopology: true, useNewUrlParser: true, useFindAndModify: false}, (error, result) => {
+        mongoose.connect('mongodb://localhost:27017/pfc_local', {useUnifiedTopology: true, useNewUrlParser: true, useFindAndModify: false}, (error, result) => {
             if (error) {
                 console.log(error);
                 return reject(error);
