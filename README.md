@@ -1,70 +1,53 @@
-# Getting Started with Create React App
+# Personal Blogging Platform
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
+This project is a simple personal blogging platform built using the MERN stack. It allows users to register, log in, and post blogs with basic text formatting options. The platform also supports CRUD operations for managing blog posts.
 
-## Available Scripts
+## Technologies Used
+- Node.js (Express.js) - Backend server
+- React.js - Frontend framework
+- MongoDB - Database
+- Tailwind CSS - Frontend styling
+- Redux Toolkit - State management
 
-In the project directory, you can run:
+## Key Features
+### User Authentication
+- **Login:** Users can log in to their accounts.
+- **Registration:** New users can create accounts.
+- **Reset Password:** Users can reset their passwords if forgotten.
+- **Email Verification:** Email verification is implemented for new user registration.
 
-### `npm start`
+### Blog Post Management
+- **CRUD Operations:** Users can create, read, update, and delete blog posts.
+- **Listing Blog Posts:** Blog posts are listed with a user-friendly interface.
+- **Inline Delete & Edit Options:** Users can delete and edit blog posts inline.
+- **New Post Popup:** A popup action is available for creating new posts.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Text Formatting
+- **Rich Text Editing:** A Rich Text Editor (RTE) is implemented for text formatting, including options for bold, italic, and underline.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Responsive Design
+- The UI is designed to be responsive and work seamlessly on all browsers and devices.
 
-### `npm test`
+## Installation
+1. Clone the repository:
+2. Install dependencies:
+cd <project_directory>
+npm install
+3. Set up environment variables:
+- Define environment variables for MongoDB connection, JWT secret, etc.
+4. Run the application:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+5. Open your browser and navigate to `http://localhost:3001` to access the application.
 
-### `npm run build`
+## Usage
+1. Register a new account or log in with existing credentials.
+2. Explore existing blog posts or create new ones.
+3. Use the text formatting options in the Rich Text Editor to style your blog posts.
+4. Manage your blog posts through the provided CRUD functionalities.
+5. Log out when done.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Contributors
+- Mantej Singh
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
