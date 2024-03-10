@@ -32,13 +32,18 @@ This project is a simple personal blogging platform built using the MERN stack. 
 ## Installation
 1. Clone the repository:
 2. Install dependencies:
-cd <project_directory>
-npm install
+- cd client
+- npm install
+- npm start 
+- cd pfc_backend
+- npm install
+- node server.js
 3. Set up environment variables:
 - Define environment variables for MongoDB connection, JWT secret, etc.
 4. Run the application:
 
 5. Open your browser and navigate to `http://localhost:3001` to access the application.
+6. Server is running on 3006
 
 ## Usage
 1. Register a new account or log in with existing credentials.
