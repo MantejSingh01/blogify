@@ -21,6 +21,7 @@ const MyPosts = () => {
       const userPostsData = posts.filter(
         (item) => item.userId === user?.data.id
       );
+
       setUserPosts(userPostsData);
     }
   }, [posts, user]);
@@ -70,7 +71,7 @@ const MyPosts = () => {
   return (
     <div className="z-10 px-28 py-4 relative ">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {userPosts.map((item, index) => (
+        {userPosts.length> 0? userPosts.map((item, index) => (
           <div
             key={item.id + index}
             className="bg-white rounded-lg p-4 shadow-md"
@@ -95,7 +96,19 @@ const MyPosts = () => {
               </button>
             </div>
           </div>
-        ))}
+        )):(
+          <div className="flex items-center justify-center h-full absolute  top-0 left-0 right-0 bottom-0 ">
+              <div className="text-center">
+                  <h2 className="text-3xl font-semibold text-white mb-4">Oops!</h2>
+                  <p className="text-lg text-white ">
+                      It seems there are no posts to show right now.
+                  </p>
+                  <p className="text-lg text-white ">
+                      Check back later for updates or create your own post!
+                  </p>
+              </div>
+          </div>
+      )}
       </div>
       {isEditModalOpen && (
         <CreatePost
@@ -108,4 +121,4 @@ const MyPosts = () => {
   );
 };
 
-export default MyPosts;
+export default React.memo(MyPosts);

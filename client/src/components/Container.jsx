@@ -28,7 +28,9 @@ const Container = () => {
         try {
             const { data } = await getBlogPosts({ limit, page });
             if (data.data.blogData.length !== 0) {
-                dispatch(getAllBlogsSuccess([...posts, ...data.data.blogData]));
+                // Filter out any posts that are already in the state to prevent duplicates
+                const newPosts = data.data.blogData.filter(post => !posts.some(existingPost => existingPost.id === post.id));
+                dispatch(getAllBlogsSuccess([...posts, ...newPosts]));
             } else {
                 setEndOfData(true);
             }
@@ -97,4 +99,4 @@ const Container = () => {
     );
 };
 
-export default Container;
+export default React.memo(Container);

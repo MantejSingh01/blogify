@@ -3,6 +3,8 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { useForgotPasswordMutation } from "../../reduxToolKit/UserSlice";
 import { useDispatch } from "react-redux";
 import { isValidEmail } from "../../utils/isValidEmail";
+import Loading from "./Loading";
+import ErrorComponent from "./ErrorComponent";
 
 const Verification = (props) => {
   const [email, setEmail] = useState("");
@@ -23,7 +25,9 @@ const Verification = (props) => {
         const { data }= await forgotPassword(email);
         if(data && data.status == 200 ){
             console.log("mail send", data);
+            setEmail("")
             alert(data?.message? data?.message: "link sent to the mail!!")
+            navigate("/login")
         }
        
     } catch (error) {
@@ -36,6 +40,8 @@ const Verification = (props) => {
 
   return (
     <div className="bg-cover bg-center flex justify-center items-center h-3/4  py-16 ">
+        {isLoading && <Loading/>}
+        {isError && <ErrorComponent message={error.data.message}/>}
       <div className="bg-white bg-opacity-75 backdrop-blur-lg p-10 rounded-lg relative">
         <button
           className="absolute top-0 left-2 mt-2 text-black p-1 text-xl hover:bg-gray-800 hover:text-white"

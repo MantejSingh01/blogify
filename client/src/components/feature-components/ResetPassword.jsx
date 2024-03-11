@@ -1,6 +1,8 @@
 import React,{useState, useEffect} from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useResetPasswordMutation } from "../../reduxToolKit/UserSlice";
+import Loading from "./Loading";
+import ErrorComponent from "./ErrorComponent";
 
 const ResetPassword = () => {
   const location = useLocation();
@@ -38,6 +40,8 @@ const ResetPassword = () => {
 
   return (
     <div className="bg-cover bg-center flex justify-center items-center h-screen py-16 ">
+          { isLoading && <Loading />}
+          {isError && <ErrorComponent message={error.data.message}/>}
       <div className="bg-white bg-opacity-75 backdrop-blur-lg p-10 rounded-lg relative">
         <h2 className="text-2xl font-semibold mb-4">Reset Password</h2>
         {!success ? (
